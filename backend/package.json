@@ -7,13 +7,15 @@
 		"filmfund.eth": "lib/cli.js"
 	},
 	"dependencies": {
+		"@prisma/client": "^5.14.0",
 		"@prokopschield/simple-socket-server": "^0.0.1-6",
 		"doge-passwd": "^0.1.4",
 		"ps-std": "^0.1.44"
 	},
 	"devDependencies": {
 		"@types/express": "^4.17.21",
-		"@types/node": "^18"
+		"@types/node": "^18",
+		"prisma": "^5.14.0"
 	},
 	"keywords": [],
 	"license": "GPL-3.0-or-later"

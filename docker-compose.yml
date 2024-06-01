@@ -1,0 +1,28 @@
+services:
+    backend:
+        build: ./backend/
+        restart: always
+        depends_on:
+            - db
+        environment:
+            DATABASE_URL: mysql://root:${DATABASE_PASSWORD}@db/filmfund
+        ports:
+            - "24061:24061"
+
+    db:
+        image: "mariadb"
+        restart: always
+        volumes:
+            - ./data/db:/var/lib/mysql
+        environment:
+            MARIADB_USER: filmfund
+            MARIADB_PASSWORD: "${DATABASE_PASSWORD}"
+            MARIADB_ROOT_PASSWORD: "${DATABASE_PASSWORD}"
+        ports:
+            - "3306:3306"
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - "127.0.0.1:24063:8080"
+            - "172.17.0.1:24063:8080"
