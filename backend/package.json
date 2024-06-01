@@ -1,0 +1,20 @@
+{
+	"name": "filmfund.eth",
+	"description": "filmfund.eth website backend",
+	"version": "0.0.0",
+	"main": "lib/index.js",
+	"bin": {
+		"filmfund.eth": "lib/cli.js"
+	},
+	"dependencies": {
+		"@prokopschield/simple-socket-server": "^0.0.1-6",
+		"doge-passwd": "^0.1.4",
+		"ps-std": "^0.1.44"
+	},
+	"devDependencies": {
+		"@types/express": "^4.17.21",
+		"@types/node": "^18"
+	},
+	"keywords": [],
+	"license": "GPL-3.0-or-later"
+}
