@@ -7,34 +7,38 @@ export function initApi() {
 		async register(_socket, state, username, secret) {
 			const result = await register(username, secret);
 
-			return result.map(
-				(user) => {
-					state.set("username", user.username);
+			return result
+				.map(
+					(user) => {
+						state.set("username", user.username);
 
-					return user;
-				},
-				(error) => {
-					state.delete("username");
+						return user;
+					},
+					(error) => {
+						state.delete("username");
 
-					return { error: String(error) };
-				}
-			);
+						return { error: String(error) };
+					}
+				)
+				.into();
 		},
 		async login(_socket, state, username, secret) {
 			const result = await login(username, secret);
 
-			return result.map(
-				(user) => {
-					state.set("username", user.username);
+			return result
+				.map(
+					(user) => {
+						state.set("username", user.username);
 
-					return user;
-				},
-				(error) => {
-					state.delete("username");
+						return user;
+					},
+					(error) => {
+						state.delete("username");
 
-					return { error: String(error) };
-				}
-			);
+						return { error: String(error) };
+					}
+				)
+				.into();
 		},
 	});
 }
