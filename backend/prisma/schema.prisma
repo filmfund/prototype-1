@@ -19,7 +19,7 @@ model auth {
 
 model user {
   id        BigInt   @id @default(autoincrement())
-  username  BigInt
+  username  String   @db.VarChar(64)
   timestamp DateTime @default(now()) @db.Timestamp(0)
   auth      auth[]
 }
