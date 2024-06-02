@@ -1,7 +1,8 @@
 import { user } from "@prisma/client";
-import { Err, Ok, Result, omit } from "ps-std";
-import { database } from "../database";
 import { verify } from "doge-passwd";
+import { Err, Ok, Result, omit } from "ps-std";
+
+import { database } from "../database";
 
 export async function login(
 	username: string,
