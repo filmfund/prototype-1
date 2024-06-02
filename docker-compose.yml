@@ -6,9 +6,16 @@ services:
             - db
         environment:
             DATABASE_URL: mysql://root:${DATABASE_PASSWORD}@db/filmfund
+            FRONTEND_URL: http://frontend:4173
         ports:
             - "24061:24061"
-
+    frontend:
+        build: ./frontend/
+        restart: always
+        depends_on:
+            - backend
+        ports:
+            - "24062:4173"
     db:
         image: "mariadb"
         restart: always
